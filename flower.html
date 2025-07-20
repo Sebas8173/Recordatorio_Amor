@@ -9,11 +9,12 @@
     <title>Para mi Fanny</title>
   </head>
   <body class="container">
-    <audio id="myAudio" autoplay muted loop>
+    <audio id="myAudio" autoplay loop>
       <source src="sound/ChristianBasso&HaienQiu-Flowers.mp3" type="audio/mpeg">
       <source src="sound/ChristianBasso&HaienQiu-Flowers.ogg" type="audio/ogg">
       Tu navegador no soporta el elemento de audio.
     </audio>
+
     <div id="lyrics"></div>
     
     <h1 class="titulo">"Eres mi pedacito de cielooo.
@@ -320,26 +321,6 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const audio = document.getElementById('myAudio');
-        
-        // Intentar desmutear después de un breve retraso
-        setTimeout(() => {
-          audio.muted = false;
-          audio.play().catch(err => {
-            console.error('Error al intentar desmutear:', err);
-          });
-        }, 1000); // Retraso de 1 segundo
 
-        // Desmutear al detectar cualquier interacción del usuario
-        document.addEventListener('click', () => {
-          audio.muted = false;
-          audio.play().catch(err => {
-            console.error('Error al reproducir tras clic:', err);
-          });
-        }, { once: true }); // Solo ejecuta una vez
-      });
-    </script>
   </body>
 </html>
